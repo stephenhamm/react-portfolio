@@ -3,6 +3,7 @@
   box-sizing: border-box;
   display: block;
   width: 100%;
+  font-size: 1.7rem;
 }
 
 .NavigationItem a {

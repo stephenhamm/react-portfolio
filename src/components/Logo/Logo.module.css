@@ -1,9 +1,19 @@
 .Logo {
   height: 100%;
   box-sizing: border-box;
-  margin-right: 25px;
+  margin-right: 20px;
 }
 
 .Logo img {
-  height: 50px;
+  height: 40px;
+}
+
+@media (max-width: 499px) {
+  .Logo {
+    margin-left: 20px;
+  }
+
+  .Logo img {
+    height: 30px;
+  }
 }
