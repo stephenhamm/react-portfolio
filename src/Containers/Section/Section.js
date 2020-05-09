@@ -7,7 +7,7 @@ class Section extends Component {
     return (
       <div className={classes.Section}>
         <p>{this.props.title}</p>
-        <img src={this.props.image} alt="Skill" />
+        <img src={this.props.image} alt="Skill" /> 
       </div>
     );
   }

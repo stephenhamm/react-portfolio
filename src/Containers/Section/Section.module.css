@@ -11,3 +11,11 @@
   color: black;
   flex-grow: 1;
 }
+
+.Section img {
+  max-width: 300px;
+  max-height: 300px;
+  display: inline-block;
+  height:100%;
+  vertical-align: middle;
+}
