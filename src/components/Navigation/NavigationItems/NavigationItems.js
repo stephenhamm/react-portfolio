@@ -4,13 +4,15 @@ import classes from './NavigationItems.module.css';
 import NavigationItem from './NavigationItem/NavigationItem';
 import Blog from '../../../Containers/Blog/Blog';
 import Home from '../../../Containers/Home/Home';
+import About from '../../../Containers/About/About';
+import Contact from '../../../Containers/Contact/Contact';
 
 const navigationItems = () => (
   <ul className={classes.NavigationItems}>
-    <NavigationItem link="/" componentName={Home}>HOME</NavigationItem>
-    <NavigationItem link="/blog" componentName={Blog}>BLOG</NavigationItem>
-    <NavigationItem link="/">ABOUT</NavigationItem>
-    <NavigationItem link="/">CONTACT</NavigationItem>
+    <NavigationItem link="/">HOME</NavigationItem>
+    <NavigationItem link="/blog" >BLOG</NavigationItem>
+    <NavigationItem link="/about">ABOUT</NavigationItem>
+    <NavigationItem link="/contact">CONTACT</NavigationItem>
   </ul>
 );
 

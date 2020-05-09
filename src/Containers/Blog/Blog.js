@@ -7,7 +7,7 @@ class Blog extends Component {
   render () {
     return (
       <div>
-         {<Route path="/blog" exact component={Posts} />}
+        <Posts />
       </div>
     );
   }

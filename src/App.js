@@ -5,6 +5,8 @@ import classes from './App.module.css'
 import Layout from './hoc/Layout/Layout';
 import Home from './Containers/Home/Home';
 import Blog from './Containers/Blog/Blog';
+import About from './Containers/About/About';
+import Contact from './Containers/Contact/Contact';
 
 class App extends Component {
   render() {
@@ -13,6 +15,8 @@ class App extends Component {
           <Layout>
             <Switch>
               <Route path="/blog" component={Blog} />
+              <Route path="/about" component={About} />
+              <Route path="/contact" component={Contact} />
               <Route path="/" exact component={Home} />
             </Switch>
           </Layout>
