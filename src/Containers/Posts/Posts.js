@@ -6,24 +6,26 @@ import Post from '../../components/Post/Post';
 import Aux from '../../hoc/Aux/Aux';
 import './Posts.module.css';
 import classes from './Posts.module.css';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Posts extends Component {
   state = {
-    posts: []
+    posts: [],
+    loading: false,
+    render: false
   }
 
   componentDidMount () {
-    console.log(this.props);
+    this.setState({loading: true});
 
     axios.get('/article_group/article.json')
       .then(response => {
         const posts = response.data;
         const updatedPosts = Object.values(posts);
-        this.setState({posts: updatedPosts});
+        this.setState({posts: updatedPosts, loading: false});
     })
     .catch(error => {
-      console.log(error);
-      //this.setState({error: true});
+      this.setState({error: true, loading: false});
     });
   }
 
@@ -32,7 +34,7 @@ class Posts extends Component {
   }
 
   render () {
-    let posts = <p style={{textAlign: 'center'}}>Something went wrong!</p>;
+    let posts = this.state.error ? <p className={classes.Error}>Error retrieving posts</p>: <Spinner />;
 
     if (!this.state.error) {
       posts = this.state.posts.map(post => {
@@ -44,6 +46,10 @@ class Posts extends Component {
               clicked={() => this.postSelectedHandler(post.id)} />
           </Link>);
       });
+    }
+
+    if (this.state.loading) {
+      posts = <Spinner />;
     }
 
     return (

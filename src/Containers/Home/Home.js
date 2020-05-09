@@ -11,7 +11,9 @@ class Home extends Component {
     return (
       <div className={classes.Home}>
         <h1>RECENT BLOG POSTS</h1>
-        {<Route path="/" exact component={Posts} />}
+        <div className={classes.Blog}>
+          {<Route path="/" exact component={Posts} />}
+        </div>
         <h4 style={{textAlign: 'center'}}>MORE POSTS</h4>
         <h1>SKILLS</h1>
         <div className={classes.Sections}>
