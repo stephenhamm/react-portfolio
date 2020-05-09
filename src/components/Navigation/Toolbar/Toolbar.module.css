@@ -1,16 +1,11 @@
 .Toolbar {
   max-width: 1600px;
-
   top: 0;
   left: 0;
   background-color: #161616;
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 90;
-}
-
-.ToolbarWidth {
-  width: 100%;
   margin: auto;
   height: 56px;
   display: flex;
