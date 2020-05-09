@@ -16,6 +16,7 @@ class Home extends Component {
           <Section title="Section 1" image="empty.jpg" />
           <Section title="Section 2" image="empty.jpg" />
           <Section title="Section 3" image="empty.jpg" />
+          <Section title="Section 4" image="empty.jpg" />
         </div> 
       </div>     
     );
