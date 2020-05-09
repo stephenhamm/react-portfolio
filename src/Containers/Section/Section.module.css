@@ -1,5 +1,5 @@
-.Post {
-  width: 350px;
+.Section {
+  height: 400px;
   padding: 16px;
   text-align: center;
   border: 1px solid #eee;
@@ -8,18 +8,4 @@
   box-sizing: border-box;
   cursor: pointer;
   color: black;
-}
-
-a {
-  text-decoration: none;
-}
-
-.Post:hover,
-.Post:active {
-  background-color: #d6d6d6;
-}
-
-.Body {
-  margin: 16px 0;
-  text-decoration: none;
 }

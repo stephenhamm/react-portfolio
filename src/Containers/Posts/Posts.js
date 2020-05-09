@@ -49,12 +49,9 @@ class Posts extends Component {
     return (
       <Aux>
         <div className={classes.PostContainer}>
-          <div className={classes.InnerContainer}>
-            <h2>RECENT BLOG POSTS</h2>
-            <section className={classes.Posts}>
-                {posts}
-            </section>
-          </div>
+          <section className={classes.Posts}>
+              {posts}
+          </section>
         </div>
       </Aux>
     );
