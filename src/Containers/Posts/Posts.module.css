@@ -1,7 +1,15 @@
 .Posts {
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
-  width: 80%;
   margin: auto;
+  width: 100%;
+}
+
+.PostContainer {
+  margin: auto;
+  width: 70%;
+}
+
+.InnerContainer {
+  align-content: flex-start;
 }

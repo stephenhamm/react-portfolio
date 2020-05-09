@@ -3,7 +3,9 @@ import axios from '../../axios';
 import { Link } from 'react-router-dom';
 
 import Post from '../../components/Post/Post';
+import Aux from '../../hoc/Aux/Aux';
 import './Posts.module.css';
+import classes from './Posts.module.css';
 
 class Posts extends Component {
   state = {
@@ -45,9 +47,16 @@ class Posts extends Component {
     }
 
     return (
-      <section className="Posts">
-          {posts}
-      </section>
+      <Aux>
+        <div className={classes.PostContainer}>
+          <div className={classes.InnerContainer}>
+            <h2>RECENT BLOG POSTS</h2>
+            <section className={classes.Posts}>
+                {posts}
+            </section>
+          </div>
+        </div>
+      </Aux>
     );
   }
 }

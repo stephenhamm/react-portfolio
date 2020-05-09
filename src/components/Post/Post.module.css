@@ -7,14 +7,19 @@
   margin: 10px;
   box-sizing: border-box;
   cursor: pointer;
+  color: black;
+}
+
+a {
+  text-decoration: none;
 }
 
 .Post:hover,
 .Post:active {
-  background-color: #C0DDF5;
+  background-color: #d6d6d6;
 }
 
-.Author {
+.Body {
   margin: 16px 0;
-  color: #ccc;
+  text-decoration: none;
 }
