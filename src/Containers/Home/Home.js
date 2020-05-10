@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Posts from '../Posts/Posts';
-import classes from './Home.module.css';
+import Posts from '../Blog/Posts/Posts';
 import Section from '../Section/Section';
 import emptyImage from '../../assets/images/empty.jpg';
+import classes from './Home.module.css';
 
 class Home extends Component {
   render () {

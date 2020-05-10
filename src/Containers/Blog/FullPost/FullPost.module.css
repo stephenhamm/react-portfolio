@@ -1,0 +1,13 @@
+.Error {
+  text-align: center;
+  margin: 0;
+  color: red;
+}
+
+.Title {
+  margin: 0;
+}
+
+.Date {
+  color: #7a7a7a;
+}

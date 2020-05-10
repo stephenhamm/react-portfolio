@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import axios from '../../axios';
-import { Link } from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import axios from '../../../axios';
+import { Link, Route } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
-import Post from '../../components/Post/Post';
-import Aux from '../../hoc/Aux/Aux';
-import './Posts.module.css';
+import Post from '../../../components/Post/Post';
+import Spinner from '../../../components/UI/Spinner/Spinner';
 import classes from './Posts.module.css';
-import Spinner from '../../components/UI/Spinner/Spinner';
 
 class Posts extends Component {
   state = {
@@ -40,23 +38,18 @@ class Posts extends Component {
       });
   }
 
-  postSelectedHandler = ( id ) => {
-    this.setState({selectedPostId: id});
-  }
-
   render () {
     let posts = this.state.error ? <p className={classes.Error}>Error retrieving posts</p>: <Spinner />;
 
     if (!this.state.error) {
       posts = this.state.posts.map(post => {
         return (
-          <Link to={'/' + post.id} key={post.id}>
+          <Link to={'/post/' + post.id} key={post.id}>
             <Fade clear>
               <Post 
                 title={post.title} 
                 date={post.date_edited}
-                body={post.body}
-                clicked={() => this.postSelectedHandler(post.id)} />
+                body={post.body} />
             </Fade>
           </Link>);
       });
@@ -67,13 +60,13 @@ class Posts extends Component {
     }
 
     return (
-      <Aux>
+      <Fragment>
         <div className={classes.PostContainer}>
           <section className={classes.Posts}>       
             {posts}
           </section>
         </div>
-      </Aux>
+      </Fragment>
     );
   }
 }

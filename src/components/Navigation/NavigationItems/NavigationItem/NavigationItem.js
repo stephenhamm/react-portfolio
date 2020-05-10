@@ -1,20 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import classes from './NavigationItem.module.css';
-import Aux from '../../../../hoc/Aux/Aux';
 
 class NavigationItem extends Component {
   render () {
     return (
-      <Aux>
-      <li className={classes.NavigationItem}>
-        <NavLink 
-          to={this.props.link}
-          exact={this.props.exact}
-          activeClassName={classes.active}>{this.props.children}</NavLink>
-      </li>
-      </Aux>
+      <Fragment>
+        <li className={classes.NavigationItem}>
+          <NavLink 
+            to={this.props.link}
+            exact={this.props.exact}
+            activeClassName={classes.active}>{this.props.children}</NavLink>
+        </li>
+      </Fragment>
     );
   }
 }
