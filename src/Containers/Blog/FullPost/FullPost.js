@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../../axios';
+import Fade from 'react-reveal/Fade';
 
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import classes from './FullPost.module.css';
@@ -17,7 +18,7 @@ class FullPost extends Component {
 
       axios.get('article_group/article/article' + this.props.match.params.id + ".json")
         .then(response => {
-          this.setState({loadedPost: response.data, loading: false});
+          this.setState({loadedPost: response.data, loading: false});       
         })
         .catch(error => {
           this.setState({error: true, loading: false});
@@ -32,13 +33,17 @@ class FullPost extends Component {
   render () {
     let post = this.state.error ? <p className={classes.Error}>Error retrieving post</p>: <Spinner />;
 
+    console.log(this.state.loadedPost);
+
     if (this.state.loadedPost && !this.state.error) {
       post = (
-        <div className="FullPost">
-          <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
-          <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_edited)}</h4>
-          <p>{this.state.loadedPost.body}</p>
-        </div>
+        <Fade clear>
+          <div className="FullPost">
+            <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
+            <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_edited)}</h4>
+            <p>{this.state.loadedPost.body}</p>
+          </div>
+        </Fade>
       );
     }
 

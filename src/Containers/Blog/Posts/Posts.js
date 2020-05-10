@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import axios from '../../../axios';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
 import Post from '../../../components/Post/Post';
