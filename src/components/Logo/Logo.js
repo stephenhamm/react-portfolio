@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-import Logo from '../../assets/images/logo.png';
+import Logos from '../../assets/images/logo.png';
+import LogoInverted from '../../assets/images/logoInverted.png';
 import classes from './Logo.module.css';
 
-const logo = ( props ) => (
-  <div className={classes.Logo}>
-    <img src={Logo} alt="Portfolio" />
-  </div>
-);
+class Logo extends Component {
+  render () {
+    const image = this.props.inverted ? <img src={LogoInverted} alt="Portfolio" /> : <img src={Logos} alt="Portfolio" /> ;
 
-export default logo;
+    return (
+      <div className={classes.Logo}>
+        {image}
+      </div>
+    );
+  }
+}
+
+export default Logo;
