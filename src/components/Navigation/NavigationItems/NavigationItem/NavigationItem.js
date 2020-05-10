@@ -10,8 +10,9 @@ class NavigationItem extends Component {
       <Aux>
       <li className={classes.NavigationItem}>
         <NavLink 
-          to={this.props.link} 
-          className={this.props.active ? classes.active : null}>{this.props.children}</NavLink>
+          to={this.props.link}
+          exact={this.props.exact}
+          activeClassName={classes.active}>{this.props.children}</NavLink>
       </li>
       </Aux>
     );
