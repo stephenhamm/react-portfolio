@@ -16,8 +16,13 @@ class Posts extends Component {
     error: false
   }
 
-  componentDidMount () { 
-    this.retrievePosts(4);
+  componentDidMount () {  
+    if (this.props.home) {
+      this.retrievePosts(4);
+    }
+    else {
+      this.retrievePosts(10);
+    }
   }
 
   retrievePosts = (limit) => {

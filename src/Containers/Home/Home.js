@@ -8,11 +8,13 @@ import emptyImage from '../../assets/images/empty.jpg';
 
 class Home extends Component {
   render () {
+    const loadPosts = true;
+
     return (
       <div className={classes.Home}>
         <h1>RECENT BLOG POSTS</h1>
         <div className={classes.Blog}>
-          <Posts />
+          <Posts home={loadPosts}/>
         </div>
         <div className={classes.Link}>
           <Link to="/blog">MORE POSTS</Link>
