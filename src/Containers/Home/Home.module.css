@@ -12,3 +12,17 @@ h1 {
 .Blog {
   min-height: 230px;
 }
+
+.Link {
+  text-align: center;
+  margin-top: 20px;
+  color: black;
+}
+
+.Link a:visited {
+  color: black;
+}
+
+.Link a:hover {
+  color: #7a7a7a;
+}

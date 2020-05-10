@@ -42,6 +42,7 @@ class Posts extends Component {
           <Link to={'/' + post.id} key={post.id}>
             <Post 
               title={post.title} 
+              date={post.date_edited}
               body={post.body}
               clicked={() => this.postSelectedHandler(post.id)} />
           </Link>);

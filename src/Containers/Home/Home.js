@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import Posts from '../Posts/Posts';
 import classes from './Home.module.css';
@@ -13,7 +14,9 @@ class Home extends Component {
         <div className={classes.Blog}>
           <Posts />
         </div>
-        <h4 style={{textAlign: 'center'}}>MORE POSTS</h4>
+        <div className={classes.Link}>
+          <Link to="/blog">MORE POSTS</Link>
+        </div>
         <h1>SKILLS</h1>
         <div className={classes.Sections}>
           <Section title="Section 1" image={emptyImage} />
