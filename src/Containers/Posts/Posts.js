@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from '../../axios';
 import { Link } from 'react-router-dom';
-import InfiniteScroll from 'react-infinite-scroller';
+import Fade from 'react-reveal/Fade';
 
 import Post from '../../components/Post/Post';
 import Aux from '../../hoc/Aux/Aux';
@@ -46,11 +46,13 @@ class Posts extends Component {
       posts = this.state.posts.map(post => {
         return (
           <Link to={'/' + post.id} key={post.id}>
-            <Post 
-              title={post.title} 
-              date={post.date_edited}
-              body={post.body}
-              clicked={() => this.postSelectedHandler(post.id)} />
+            <Fade clear>
+              <Post 
+                title={post.title} 
+                date={post.date_edited}
+                body={post.body}
+                clicked={() => this.postSelectedHandler(post.id)} />
+            </Fade>
           </Link>);
       });
     }
@@ -62,8 +64,8 @@ class Posts extends Component {
     return (
       <Aux>
         <div className={classes.PostContainer}>
-          <section className={classes.Posts}>
-              {posts}
+          <section className={classes.Posts}>       
+            {posts}
           </section>
         </div>
       </Aux>
