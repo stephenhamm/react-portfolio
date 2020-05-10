@@ -6,7 +6,8 @@ class Blog extends Component {
   render () {
     return (
       <div>
-        <Posts />
+        <h1>BLOG POSTS</h1>
+        <Posts/>
       </div>
     );
   }
