@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
 
 import Posts from '../Posts/Posts';
 import classes from './Home.module.css';

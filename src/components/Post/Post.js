@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import classes from './Post.module.css';
 
-
-
 class Post extends Component {
 	truncateString = (str) => {
 		return str.length > 100 ? str.substring(0, 100) + "..." : str;
