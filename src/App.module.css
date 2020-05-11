@@ -3,6 +3,7 @@
   max-width: 1600px;
   margin: auto;
   background-color:white;
+  overflow: hidden;
 }
 
 .App-logo {

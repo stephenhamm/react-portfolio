@@ -6,6 +6,7 @@
   margin: 10px;
   box-sizing: border-box;
   color: black;
+  transition: .3s ease;
 }
 
 a {
@@ -15,7 +16,7 @@ a {
 
 .Post:hover,
 .Post:active {
-  background-color: #d6d6d6;
+  background-color: #f2f2f2;
 }
 
 .Body {

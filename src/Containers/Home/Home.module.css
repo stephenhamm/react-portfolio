@@ -15,7 +15,11 @@ h1 {
 
 .Link {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 20px; 
+}
+
+.Link a {
+  transition: .3s ease;
   color: black;
 }
 
@@ -25,4 +29,10 @@ h1 {
 
 .Link a:hover {
   color: #7a7a7a;
+}
+
+@media(max-width: 499px) {
+  h1 {
+    text-align: center;
+  }
 }

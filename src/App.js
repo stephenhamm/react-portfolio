@@ -7,6 +7,7 @@ import Blog from './Containers/Blog/Blog';
 import About from './Containers/About/About';
 import Contact from './Containers/Contact/Contact';
 import FullPost from './Containers/Blog/FullPost/FullPost';
+import Footer from './components/Navigation/Footer/Footer';
 import classes from './App.module.css'
 
 class App extends Component {
@@ -22,6 +23,7 @@ class App extends Component {
               <Route path="/" exact component={Home} />
             </Switch>
           </Layout>
+          <Footer />
       </div>
     );
   }

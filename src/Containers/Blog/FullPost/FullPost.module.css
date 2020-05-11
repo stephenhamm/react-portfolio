@@ -15,7 +15,11 @@
 .Link {
   text-align: center;
   margin-top: 20px;
+}
+
+.Link a {
   color: black;
+  transition: .3s ease;
 }
 
 .Link a:visited {
