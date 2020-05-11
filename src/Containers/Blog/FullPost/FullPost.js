@@ -31,9 +31,7 @@ class FullPost extends Component {
 	}
 
   render () {
-    let post = this.state.error ? <p className={classes.Error}>Error retrieving post</p>: <Spinner />;
-
-    console.log(this.state.loadedPost);
+    let post = this.state.loadedPost == null || this.state.error ? <p className={classes.Error}>Error retrieving post</p>: <Spinner />;
 
     if (this.state.loadedPost && !this.state.error) {
       post = (
