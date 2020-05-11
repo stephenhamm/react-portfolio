@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'; 
 import axios from '../../../axios';
 import Fade from 'react-reveal/Fade';
 
@@ -40,6 +41,9 @@ class FullPost extends Component {
             <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
             <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_edited)}</h4>
             <p>{this.state.loadedPost.body}</p>
+          </div>
+          <div className={classes.Link}>
+            <Link to="/blog">MORE POSTS</Link>
           </div>
         </Fade>
       );
