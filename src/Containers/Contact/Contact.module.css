@@ -98,3 +98,10 @@ textarea {
     height: 200px;
   }
 }
+
+@media(min-width: 320px) and (max-width: 400px) {
+  .Overlay {
+    font-size: 6rem;
+  }
+}
+

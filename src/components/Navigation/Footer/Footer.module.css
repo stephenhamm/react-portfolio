@@ -18,7 +18,7 @@
 
 .Right {
   display: flex;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .NavigationItems {
@@ -89,4 +89,38 @@
   background: url("../../../assets/images/githubgray.png");
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+@media (min-width: 320px) and (max-width: 400px) {
+  .Right {
+    display: block;
+    margin-right: 30px;
+  }
+
+  .Linkedin, .Github {
+    width: 20px;
+    height:20px;
+  }
+}
+
+@media (hover: none) {
+  .NavigationItem a:hover {
+    color: white;
+  }
+
+  .Linkedin:hover {
+    width: 25px;
+    height: 25px;
+    background: url("../../../assets/images/linkedin.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .Github:hover {
+    width: 25px;
+    height: 25px;
+    background: url("../../../assets/images/github.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }
