@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Layout from './hoc/Layout/Layout';
+import ScrollToTop from './components/UI/ScrollToTop/ScrollToTop';
 import Home from './Containers/Home/Home';
 import Blog from './Containers/Blog/Blog';
 import About from './Containers/About/About';
@@ -15,7 +16,8 @@ class App extends Component {
     return (
       <div className={classes.App}>
           <Layout>
-            <Switch>
+            <ScrollToTop />
+            <Switch>             
               <Route path="/blog" component={Blog} />
               <Route path="/about" component={About} />
               <Route path="/contact" component={Contact} />

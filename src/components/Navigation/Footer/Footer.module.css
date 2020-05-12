@@ -12,23 +12,13 @@
   background-color: #161616;
 }
 
-.Icon {
-  width: 25px;
-  height: auto;
-}
-
 .Left {
   margin-left: 30px;
 }
 
 .Right {
+  display: flex;
   margin-right: 30px;
-}
-
-.Link {
-  width: 25px;
-  flex-grow: 0;
-  margin: 10px;
 }
 
 .NavigationItems {
@@ -55,4 +45,47 @@
   height: 100%;
   padding: 16px 10px;
   border-bottom: 4px solid transparent;
+  transition: .3s ease;
+}
+
+.NavigationItem a:hover {
+  color: #7a7a7a;
+}
+
+.Copyright {
+  color: white;
+}
+
+.Link {
+  margin: 10px;
+}
+
+.Linkedin {
+  width: 25px;
+  height: 25px;
+  background: url("../../../assets/images/linkedin.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: .3s ease;
+}
+
+.Linkedin:hover {
+  background: url("../../../assets/images/linkedingray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Github {
+  width: 25px;
+  height: 25px;
+  background: url("../../../assets/images/github.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: .3s ease;
+}
+
+.Github:hover {
+  background: url("../../../assets/images/githubgray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
