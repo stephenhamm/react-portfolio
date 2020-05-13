@@ -14,9 +14,6 @@ class Home extends Component {
         <div className={classes.Blog}>
           <Posts home={true}/>
         </div>
-        <div className={classes.Link}>
-          <Link to="/blog">MORE POSTS</Link>
-        </div>
         <h1>SKILLS</h1>
         <div className={classes.Sections}>
           <Section title="Section 1" image={emptyImage} />

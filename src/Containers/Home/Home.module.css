@@ -10,12 +10,7 @@ h1 {
 }
 
 .Blog {
-  min-height: 320px;
-}
-
-.Link {
-  text-align: center;
-  margin-top: 20px; 
+  min-height: 350px;
 }
 
 .Link a {

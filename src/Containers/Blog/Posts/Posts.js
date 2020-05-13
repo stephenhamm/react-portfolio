@@ -41,6 +41,11 @@ class Posts extends Component {
 
   render () {
     let posts = this.state.error ? <p className={classes.Error}>Error retrieving posts</p>: null;
+    let blogLink = this.props.home && this.state.postCount > 0 ? 
+      <Fade clear>
+        <div className={classes.Link}><Link to="/blog">MORE POSTS</Link></div>
+      </Fade> : null;
+      
     let loadMoreLink = this.props.home || this.state.postCount <= 0 ? null : (
       <Fade clear>
         <div className={classes.Link}>
@@ -69,6 +74,7 @@ class Posts extends Component {
             {posts}
         </section>
         {loadMoreLink}
+        {blogLink}
       </Fragment>
     );
   }
