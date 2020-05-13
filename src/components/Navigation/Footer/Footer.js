@@ -7,7 +7,7 @@ class Footer extends Component {
   render () {
     return (
       <div className={classes.Footer}>
-        <div class={classes.Left}>
+        <div className={classes.Left}>
           <ul className={classes.NavigationItems}>
             <li className={classes.NavigationItem}>
               <NavLink to="/" exact>HOME</NavLink>

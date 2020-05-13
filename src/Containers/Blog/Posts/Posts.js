@@ -4,45 +4,53 @@ import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/Fade';
 
 import Post from '../../../components/Post/Post';
-import Spinner from '../../../components/UI/Spinner/Spinner';
 import classes from './Posts.module.css';
 
 class Posts extends Component {
   state = {
     posts: [],
-    loading: false,
-    error: false
+    error: false,
+    postCount: 0
   }
 
-  componentDidMount () {  
-    if (this.props.home) {
-      this.retrievePosts(4);
-    }
-    else {
-      this.retrievePosts(10);
-    }
+  componentDidMount () {
+    this.retrievePosts();
   }
 
-  retrievePosts = (limit) => {
-    this.setState({loading: true});
+  retrievePosts = () => {
+    const limit = this.props.home ? 4 : 10;
 
     axios.get('/article_group/article.json')
       .then(response => {
         const result = Object.keys(response.data).map((k) => response.data[k]);
         const newestPosts = result.sort((a, b) => b.date_edited - a.date_edited);
-        const posts = newestPosts.slice(0, limit);     
-        this.setState({posts: posts, loading: false});
+        const postList = newestPosts.splice(this.state.postCount, limit);          
+        this.addItems(postList);  
       })
       .catch(error => {
-        this.setState({error: true, loading: false});
+        this.setState({error: true});
       });
   }
 
+  addItems = (items) => {
+    this.setState(prevState => ({
+      posts: [...this.state.posts, ...items],
+      postCount: prevState.postCount + items.length
+    }));
+  }
+
   render () {
-    let posts = this.state.error ? <p className={classes.Error}>Error retrieving posts</p>: <Spinner />;
+    let posts = this.state.error ? <p className={classes.Error}>Error retrieving posts</p>: null;
+    let loadMoreLink = this.props.home || this.state.postCount <= 0 ? null : (
+      <Fade clear>
+        <div className={classes.Link}>
+          <a href onClick={this.retrievePosts}>LOAD MORE POSTS</a>
+        </div>
+      </Fade>
+    );
 
     if (!this.state.error) {
-      posts = this.state.posts.map(post => {
+      posts = this.state.posts.map((post) => {
         return (
           <Link to={'/post/' + post.id} key={post.id}>
             <Fade clear>
@@ -55,17 +63,12 @@ class Posts extends Component {
       });
     }
 
-    if (this.state.loading) {
-      posts = <Spinner />;
-    }
-
     return (
       <Fragment>
-        <div className={classes.PostContainer}>
-          <section className={classes.Posts}>       
+        <section className={classes.Posts}>   
             {posts}
-          </section>
-        </div>
+        </section>
+        {loadMoreLink}
       </Fragment>
     );
   }

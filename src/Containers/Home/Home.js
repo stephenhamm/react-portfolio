@@ -8,13 +8,11 @@ import classes from './Home.module.css';
 
 class Home extends Component {
   render () {
-    const loadPosts = true;
-
     return (
       <div className={classes.Home}>
         <h1>RECENT BLOG POSTS</h1>
         <div className={classes.Blog}>
-          <Posts home={loadPosts}/>
+          <Posts home={true}/>
         </div>
         <div className={classes.Link}>
           <Link to="/blog">MORE POSTS</Link>

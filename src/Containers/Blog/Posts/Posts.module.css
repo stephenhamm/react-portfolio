@@ -1,13 +1,38 @@
 .Posts {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   margin: auto;
   width: auto;
+  height: 100%;
 }
 
 .Error {
   text-align: center;
   margin: auto;
   color: red;
+}
+
+.Link {
+  text-align: center;
+  margin-top: 20px; 
+  cursor: pointer;
+}
+
+.Link a {
+  transition: .3s ease;
+  color: black;
+}
+
+.Link a:visited {
+  color: black;
+}
+
+.Link a:hover {
+  color: #7a7a7a;
+}
+
+@media (hover: none) {
+  .Link a:hover {
+    color: black;
+  }
 }

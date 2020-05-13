@@ -1,7 +1,6 @@
 .Toolbar {
   max-width: 1600px;
   top: 0;
-  left: 0;
   background-color: #161616;
   padding: 0 20px;
   box-sizing: border-box;
@@ -10,22 +9,16 @@
   height: 56px;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
 }
 
 .Toolbar nav {
   height: 100%;
 }
 
-
-
 @media (max-width: 499px) {
   .DesktopOnly {
     display: none;
-  }
-
-  .Toolbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
   }
 }

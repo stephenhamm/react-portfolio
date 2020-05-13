@@ -3,26 +3,27 @@ import { Link } from 'react-router-dom';
 import axios from '../../../axios';
 import Fade from 'react-reveal/Fade';
 
-import Spinner from '../../../components/UI/Spinner/Spinner';
 import classes from './FullPost.module.css';
 
 class FullPost extends Component {
   state = {
     loadedPost: null,
-    loading: false,
     error: false
   }
 
   componentDidMount () {
     if (this.props.match.params.id) {
-      this.setState({loading: true});
-
       axios.get('article_group/article/article' + this.props.match.params.id + ".json")
         .then(response => {
-          this.setState({loadedPost: response.data, loading: false});       
+          if (response.data != null) {
+            this.setState({loadedPost: response.data});  
+            console.log("tes");
+          }
+          else
+            this.setState({error: true});    
         })
         .catch(error => {
-          this.setState({error: true, loading: false});
+          this.setState({error: true});
         });;
       }
   }
@@ -32,7 +33,7 @@ class FullPost extends Component {
 	}
 
   render () {
-    let post = this.state.loadedPost == null || this.state.error ? <p className={classes.Error}>Error retrieving post</p>: <Spinner />;
+    let post = this.state.error ? <p className={classes.Error}>Error retrieving post</p>: null;
 
     if (this.state.loadedPost && !this.state.error) {
       post = (
@@ -47,10 +48,6 @@ class FullPost extends Component {
           </div>
         </Fade>
       );
-    }
-
-    if (this.state.loading) {
-      post = <Spinner />;
     }
 
     return post;
