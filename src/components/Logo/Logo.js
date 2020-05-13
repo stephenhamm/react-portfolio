@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import Logos from '../../assets/images/logo.png';
-import LogoInverted from '../../assets/images/logoInverted.png';
+import Logos from '../../assets/images/weblogo.png';
+import LogoInverted from '../../assets/images/weblogoinverted.png';
 import classes from './Logo.module.css';
 
 class Logo extends Component {

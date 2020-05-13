@@ -5,12 +5,12 @@
 }
 
 .Logo img {
-  height: 40px;
+  height: 35px;
 }
 
 @media (max-width: 499px) {
   .Logo {
-    margin-left: 20px;
+    margin-right: 0;
   }
 
   .Logo img {

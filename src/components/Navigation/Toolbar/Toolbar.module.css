@@ -16,8 +16,16 @@
   height: 100%;
 }
 
+
+
 @media (max-width: 499px) {
   .DesktopOnly {
     display: none;
+  }
+
+  .Toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
