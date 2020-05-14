@@ -1,21 +1,21 @@
 .Posts {
   display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-  width: auto;
-  height: 100%;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 .Error {
   text-align: center;
   margin: auto;
-  color: red;
+}
+
+a {
+  text-decoration: none;
 }
 
 .Link {
   text-align: center;
   margin-top: 20px; 
-  margin-bottom: 130px;
   cursor: pointer;
 }
 
@@ -35,7 +35,33 @@
 .End {
   text-align: center;
   margin-top: 20px; 
-  margin-bottom: 130px;
+}
+
+.PostLink { 
+  display: flex;
+  flex-basis: 25%;
+  -ms-flex: auto;
+}
+
+@media(max-width: 1333px) {
+  .PostLink {
+    flex-basis: 25%;
+  }
+}
+@media(max-width: 1073px) {
+   .PostLink {
+    flex-basis: 50%;
+  }
+}
+@media(max-width: 815px) {
+  .PostLink {
+    flex-basis: 50%;
+  }
+}
+@media(max-width: 555px) {
+  .PostLink {
+    flex-basis: 100%;
+  }
 }
 
 @media (hover: none) {

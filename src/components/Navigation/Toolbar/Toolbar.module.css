@@ -1,5 +1,6 @@
 .Toolbar {
   max-width: 1600px;
+  width: 100%;
   top: 0;
   background-color: #161616;
   padding: 0 20px;
@@ -9,8 +10,10 @@
   height: 56px;
   display: flex;
   align-items: center;
-  position: fixed;
-  width: 100%;
+  position: fixed; 
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
 }
 
 .Toolbar nav {

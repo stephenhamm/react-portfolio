@@ -19,7 +19,7 @@ class Posts extends Component {
   }
 
   retrievePosts = () => {
-    const limit = this.props.home ? 4 : 10;
+    const limit = this.props.home ? 4 : 8;
 
     axios.get('/article_group/article.json')
       .then(response => {
@@ -65,12 +65,13 @@ class Posts extends Component {
     if (!this.state.error) {
       posts = this.state.posts.map((post) => {
         return (
-          <Link to={'/post/' + post.id} key={post.id}>
+          <Link to={"/post/" + post.id} key={post.id} className={classes.PostLink}>
             <Fade clear>
               <Post 
                 title={post.title} 
                 date={post.date_edited}
-                body={post.body} />
+                body={post.body} 
+                className={classes.Posti} />
             </Fade>
           </Link>);
       });
@@ -78,9 +79,9 @@ class Posts extends Component {
 
     return (
       <Fragment>
-        <section className={classes.Posts}>   
+        <div className={classes.Posts}>   
           {posts}
-        </section>
+        </div>
         {loadMoreLink}
         {blogLink}
         {postEnd}

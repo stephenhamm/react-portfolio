@@ -1,8 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Posts from '../Blog/Posts/Posts';
 import Section from '../Section/Section';
-import emptyImage from '../../assets/images/empty.jpg';
+import Coding from '../../assets/images/coding.png';
+import Photography from '../../assets/images/photography.jpeg';
+import ScreePrinting from '../../assets/images/screenprinting1.png';
+import GraphicDesign from '../../assets/images/graphicdesign.jpg';
 import classes from './Home.module.css';
 
 const Home = () => (
@@ -13,10 +17,18 @@ const Home = () => (
     </div>
     <h1>SKILLS</h1>
     <div className={classes.Sections}>
-      <Section title="Section 1" image={emptyImage} />
-      <Section title="Section 2" image={emptyImage} />
-      <Section title="Section 3" image={emptyImage} />
-      <Section title="Section 4" image={emptyImage} />
+      <Link to={"/"} className={classes.SectionLink}>
+        <Section title="CODING" image={Coding} />
+      </Link>
+      <Link to={"/"} className={classes.SectionLink}>
+        <Section title="GRAPHIC DESIGN" image={GraphicDesign} />
+      </Link>
+      <Link to={"/"} className={classes.SectionLink}>
+        <Section title="SCREEN PRINTING" image={ScreePrinting} />
+      </Link>
+      <Link to={"/"} className={classes.SectionLink}>
+        <Section title="PHOTOGRAPHY" image={Photography} />
+      </Link>
     </div> 
   </div>
 );

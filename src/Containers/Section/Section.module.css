@@ -1,26 +1,63 @@
 .Section {
-  max-height: 400px;
-  padding: 16px;
   text-align: center;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
-  margin: 10px;
   box-sizing: border-box;
-  cursor: pointer;
+  transition: .3s ease;
   color: black;
-  flex-grow: 1;
+  height: 350px;
+  box-sizing: border-box;
+  margin: 10px;
+  flex-basis: 25%;
+  -ms-flex: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.Title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  background-color: #f9f9f9;
+  padding: 20px;
 }
 
 .Section img {
+  height: 350px;
   width: 100%;
-  max-width: 300px;
-  height: auto;
-  vertical-align: middle;
-  display: inline-block;
-  opacity: 1;
+  object-fit: cover;
+  opacity: 0.8;
   transition: .3s ease;
+  backface-visibility: hidden;
+  display: block;
 }
 
 .Section:hover img {
   opacity: 0.3;
+}
+
+.Middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  -ms-transform: translate(-50%, -30%);
+  text-align: center;
+}
+
+.Text {
+  font-size: 2rem;
+  background-color: #e0e0e0;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+.Section:hover .Image {
+  opacity: 0.3;
+}
+
+.Section:hover .Middle {
+  opacity: 1;
 }

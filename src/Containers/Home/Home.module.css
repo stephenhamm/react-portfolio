@@ -1,8 +1,12 @@
 .Sections {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: auto;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.SectionLink { 
+  flex-basis: 25%;
+  -ms-flex: auto;
 }
 
 h1 {
@@ -10,7 +14,7 @@ h1 {
 }
 
 .Blog {
-  min-height: 350px;
+  min-height: 415px;
 }
 
 .Link a {
@@ -24,6 +28,27 @@ h1 {
 
 .Link a:hover {
   color: #7a7a7a;
+}
+
+@media(max-width: 1333px) {
+  .SectionLink {
+    flex-basis: 25%;
+  }
+}
+@media(max-width: 1073px) {
+   .SectionLink {
+    flex-basis: 50%;
+  }
+}
+@media(max-width: 815px) {
+  .SectionLink {
+    flex-basis: 50%;
+  }
+}
+@media(max-width: 555px) {
+  .SectionLink {
+    flex-basis: 100%;
+  }
 }
 
 @media(max-width: 499px) {

@@ -1,17 +1,17 @@
 .Post {
-  padding: 0 10px;
   text-align: center;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
-  margin: 10px;
   box-sizing: border-box;
-  color: black;
   transition: .3s ease;
-}
-
-a {
-  text-decoration: none;
-  flex-grow: 1;
+  color: black;
+  height: 350px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .Post:hover,
@@ -19,11 +19,31 @@ a {
   background-color: #f2f2f2;
 }
 
+.Title {
+  color: #3a3a3a;
+}
+
 .Body {
-  margin: 16px 0;
   text-decoration: none;
+  font-size: 1.6rem;
+  text-align: left;
 }
 
 .Date {
   color: #7a7a7a;
+  font-size: 1.7rem;
+}
+
+.Link {
+  transition: .3s ease;
+}
+
+.Link:hover {
+  color: #7a7a7a;
+}
+
+@media (hover: none) {
+  .Link a:hover {
+    color: black;
+  }
 }
