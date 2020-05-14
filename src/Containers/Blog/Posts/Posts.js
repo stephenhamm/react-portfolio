@@ -10,7 +10,8 @@ class Posts extends Component {
   state = {
     posts: [],
     error: false,
-    postCount: 0
+    postCount: 0,
+    totalAvailable: 0
   }
 
   componentDidMount() {
@@ -23,36 +24,43 @@ class Posts extends Component {
     axios.get('/article_group/article.json')
       .then(response => {
         const result = Object.keys(response.data).map((k) => response.data[k]);
+        const totalPosts = result.length      
         const newestPosts = result.sort((a, b) => b.date_edited - a.date_edited);
-        const postList = newestPosts.splice(this.state.postCount, limit);          
-        this.addItems(postList);  
+        const postList = newestPosts.splice(this.state.postCount, limit);      
+        this.addItems(postList, totalPosts);  
       })
       .catch(error => {
         this.setState({error: true});
       });
   }
 
-  addItems = (items) => {
-    this.setState(prevState => ({
+  addItems = (items, total) => {
+    this.setState({
       posts: [...this.state.posts, ...items],
-      postCount: prevState.postCount + items.length
-    }));
+      postCount: this.state.postCount + items.length,
+      totalAvailable: total
+    });
   }
 
   render () {
     let posts = this.state.error ? <p className={classes.Error}>Error retrieving posts</p>: null;
+
+    let postEnd = this.state.totalAvailable === this.state.postCount && this.state.postCount > 0 ?
+      <Fade>
+        <div className={classes.End}><span>END OF POSTS</span></div>
+      </Fade> : null;
+
     let blogLink = this.props.home && this.state.postCount > 0 ? 
       <Fade clear>
         <div className={classes.Link}><Link to="/blog">MORE POSTS</Link></div>
       </Fade> : null;
       
-    let loadMoreLink = this.props.home || this.state.postCount <= 0 ? null : (
+    let loadMoreLink = !this.props.home && this.state.postCount > 0 && postEnd == null ? 
       <Fade clear>
         <div className={classes.Link}>
-          <a href onClick={this.retrievePosts}>LOAD MORE POSTS</a>
+          <a role="button" onClick={this.retrievePosts}>LOAD MORE POSTS</a>
         </div>
-      </Fade>
-    );
+      </Fade> : null;
 
     if (!this.state.error) {
       posts = this.state.posts.map((post) => {
@@ -71,10 +79,11 @@ class Posts extends Component {
     return (
       <Fragment>
         <section className={classes.Posts}>   
-            {posts}
+          {posts}
         </section>
         {loadMoreLink}
         {blogLink}
+        {postEnd}
       </Fragment>
     );
   }

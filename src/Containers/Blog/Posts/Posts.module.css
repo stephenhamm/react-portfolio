@@ -15,6 +15,7 @@
 .Link {
   text-align: center;
   margin-top: 20px; 
+  margin-bottom: 130px;
   cursor: pointer;
 }
 
@@ -29,6 +30,12 @@
 
 .Link a:hover {
   color: #7a7a7a;
+}
+
+.End {
+  text-align: center;
+  margin-top: 20px; 
+  margin-bottom: 130px;
 }
 
 @media (hover: none) {
