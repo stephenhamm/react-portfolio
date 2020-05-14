@@ -17,8 +17,17 @@
   height: 100%;
 }
 
+.Logo {
+  margin-right: 22px;
+}
+
 @media (max-width: 499px) {
   .DesktopOnly {
     display: none;
   }
+
+  .Logo {
+    margin-left: 20px;
+  }
 }
+

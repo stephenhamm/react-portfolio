@@ -1,7 +1,7 @@
 .Logo {
   height: 100%;
   box-sizing: border-box;
-  margin-right: 22px;
+  
 }
 
 .Logo img {
@@ -9,11 +9,6 @@
 }
 
 @media (max-width: 499px) {
-  .Logo {
-    margin-right: 0;
-    margin-left: 20px;
-  }
-
   .Logo img {
     height: 30px;
   }
