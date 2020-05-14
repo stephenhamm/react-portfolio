@@ -1,7 +1,7 @@
 import React from 'react';
 
-import LogoRegular from '../../assets/images/weblogo.png';
-import LogoInverted from '../../assets/images/weblogoinverted.png';
+import LogoRegular from '../../assets/images/logo.png';
+import LogoInverted from '../../assets/images/logoinverted.png';
 import classes from './Logo.module.css';
 
 const Logo = ( props ) => {
