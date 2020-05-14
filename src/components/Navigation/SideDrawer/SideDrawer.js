@@ -5,12 +5,11 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import Backdrop from '../../UI/Backdrop/Backdrop';
 import classes from './SideDrawer.module.css';
 
-const sideDrawer = ( props ) => {
+const SideDrawer = (props) => {
   let attachedClasses = [classes.SideDrawer, classes.Close];
 
-  if (props.open) {
+  if (props.open)
     attachedClasses = [classes.SideDrawer, classes.Open];
-  }
 
   return (
     <Fragment>
@@ -27,4 +26,4 @@ const sideDrawer = ( props ) => {
   );
 }
 
-export default sideDrawer;
+export default SideDrawer;

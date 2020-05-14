@@ -13,7 +13,7 @@ class Posts extends Component {
     postCount: 0
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.retrievePosts();
   }
 

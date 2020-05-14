@@ -1,21 +1,17 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import classes from './NavigationItem.module.css';
 
-class NavigationItem extends Component {
-  render () {
-    return (
-      <Fragment>
-        <li className={classes.NavigationItem}>
-          <NavLink 
-            to={this.props.link}
-            exact={this.props.exact}
-            activeClassName={classes.active}>{this.props.children}</NavLink>
-        </li>
-      </Fragment>
-    );
-  }
-}
+const NavigationItem = (props) => (
+  <Fragment>
+    <li className={classes.NavigationItem}>
+      <NavLink 
+        to={props.link}
+        exact={props.exact}
+        activeClassName={classes.active}>{props.children}</NavLink>
+    </li>
+  </Fragment>
+);
 
 export default NavigationItem;
