@@ -8,6 +8,8 @@
   font-weight: bold;
   margin: 20px;
   transition: .2s ease;
+  padding: 15px;
+  width: 150px;
 }
 
 .Button:hover {

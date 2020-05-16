@@ -17,6 +17,7 @@ const Contact = () => {
         Name: data.name.trim(),
         email: data.email.trim(),
         phone: data.phone,
+        subject: data.subject.trim(),
         message: data.message.trim()
       })
       .then(response => {
@@ -75,7 +76,7 @@ const Contact = () => {
             </ErrorMessage>
 
             <label htmlFor="phone">Phone</label>
-            <input name="phone" id="phone" ref={register({ 
+            <input name="phone" id="phone" placeholder="optional" ref={register({ 
               pattern: {
                 value: /^(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:\(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9])\s*\)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)?([2-9]1[02-9]|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/,
                 message: "Not a valid phone number."
@@ -89,9 +90,17 @@ const Contact = () => {
             </ErrorMessage>
           </div>
           <div className={classes.Right}>
+            <label htmlFor="subject">Subject</label>
+            <input name="subject" id="subject" placeholder="optional"ref={register({ 
+              maxLength: {
+                value: 100,
+                message: "Subject exceeds 100 characters."
+              } })} />
+            <ErrorMessage errors={errors} name="subject" as="span" />
+
             <label htmlFor="message">Message</label>
             <textarea name="message" ref={register({ 
-              required: "Message is required",
+              required: "Message is required.",
               maxLength: {
                 value: 2000,
                 message: "Message exceeds 2000 characters."
