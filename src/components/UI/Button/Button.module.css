@@ -18,3 +18,10 @@
 .Button:focus {
   outline: none;
 }
+
+@media (hover: none) {
+  .Button:hover {
+    background-color: #eaeaea;
+    color: black;
+  }
+}

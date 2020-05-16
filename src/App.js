@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Notifications from 'react-notify-toast';
 
 import Layout from './hoc/Layout/Layout';
 import ScrollToTop from './components/UI/ScrollToTop/ScrollToTop';
@@ -15,17 +16,18 @@ class App extends Component {
   render() {
     return (
       <div className={classes.App}>
-          <Layout>
-            <ScrollToTop />
-            <Switch>             
-              <Route path="/blog" component={Blog} />
-              <Route path="/about" component={About} />
-              <Route path="/contact" component={Contact} />
-              <Route path="/post/:id" component={FullPost} />
-              <Route path="/" exact component={Home} />
-            </Switch>
-          </Layout>
-          <Footer />
+        <Notifications />
+        <Layout>
+          <ScrollToTop />
+          <Switch>             
+            <Route path="/blog" component={Blog} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/post/:id" component={FullPost} />
+            <Route path="/" exact component={Home} />
+          </Switch>
+        </Layout>
+        <Footer />
       </div>
     );
   }

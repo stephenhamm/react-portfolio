@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from '../../../axios';
 import { Link } from 'react-router-dom';
-import Fade from 'react-reveal/Fade';
+import Fade from 'react-reveal/';
 
 import Post from '../../../components/Post/Post';
 import classes from './Posts.module.css';
@@ -21,11 +21,11 @@ class Posts extends Component {
   retrievePosts = () => {
     const limit = this.props.home ? 4 : 8;
 
-    axios.get('/article_group/article.json')
+    axios.get('/blog/posts.json')
       .then(response => {
         const result = Object.keys(response.data).map((k) => response.data[k]);
         const totalPosts = result.length      
-        const newestPosts = result.sort((a, b) => b.date_edited - a.date_edited);
+        const newestPosts = result.sort((a, b) => b.date_posted - a.date_posted);
         const postList = newestPosts.splice(this.state.postCount, limit);      
         this.addItems(postList, totalPosts);  
       })
@@ -69,7 +69,7 @@ class Posts extends Component {
             <Fade clear>
               <Post 
                 title={post.title} 
-                date={post.date_edited}
+                date={post.date_posted}
                 body={post.body} 
                 className={classes.Posti} />
             </Fade>

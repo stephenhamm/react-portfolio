@@ -7,7 +7,7 @@ const truncateString = (str) => {
 }
 
 const parseDate = (str) => {
-	return new Date(parseInt(str)).toLocaleDateString();
+	return new Date(str).toLocaleDateString();
 }
 
 const Post = (props) => (
