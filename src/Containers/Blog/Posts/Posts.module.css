@@ -17,6 +17,7 @@ a {
   text-align: center;
   margin-top: 20px; 
   cursor: pointer;
+  font-size: 1.8rem;
 }
 
 .Link a {
@@ -35,6 +36,7 @@ a {
 .End {
   text-align: center;
   margin-top: 20px; 
+  font-size: 1.8rem;
 }
 
 .PostLink { 

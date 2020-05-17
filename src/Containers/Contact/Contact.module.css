@@ -1,7 +1,11 @@
+.Contact {
+  margin: 0 30px 0 30px;
+}
+
 .Message {
   font-size: 2rem;
   text-align: center;
-  margin: 0 30px 30px 30px;
+  margin-bottom: 30px;
 }
 
 .Image {
@@ -29,7 +33,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 0 30px;
   height: 100%;
 }
 
@@ -89,7 +92,11 @@ textarea {
   margin-top: 10px;
 }
 
-@media(max-width: 750px) {
+@media(max-width: 815px) {
+  .Contact {
+    margin: 0 20px 0 20px;
+  }
+
   .Overlay {
     font-size: 10rem;
   }

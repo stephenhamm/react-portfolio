@@ -1,6 +1,6 @@
 .Section {
   text-align: center;
-  border: 1px solid #eee;
+  border: 1px solid #cecece;
   box-shadow: 0 2px 3px #ccc;
   box-sizing: border-box;
   transition: .3s ease;
@@ -20,16 +20,18 @@
   color: #3a3a3a;
   background-color: #f9f9f9;
   padding: 20px;
+  letter-spacing: 5px;
 }
 
 .Section img {
-  height: 350px;
+  height: 100%;
   width: 100%;
   object-fit: cover;
-  opacity: 0.9;
+  opacity: 0.85;
   transition: .3s ease;
   backface-visibility: hidden;
   display: block;
+  margin: 0 auto;
 }
 
 .Section:hover img {
@@ -60,4 +62,21 @@
 
 .Section:hover .Middle {
   opacity: 1;
+}
+
+@media(max-width: 815px) {
+  .Title {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+  }
+}
+
+@media(max-width: 499px) {
+  .Section {
+    height: 250px;
+  }
+
+  .Section img {
+    object-fit: cover;
+  }
 }

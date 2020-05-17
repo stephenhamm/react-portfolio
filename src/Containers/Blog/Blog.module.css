@@ -9,3 +9,9 @@ h1 {
 .Posts {
   margin: 0 auto;
 }
+
+@media(max-width: 815px) {
+  .Blog {
+    margin: 80px 10px 0 10px;
+  }
+}

@@ -7,19 +7,18 @@
   height: 370px;
   position: relative;
   text-align: center;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url("../../assets/images/mountainsgray.jpg");
+  background: linear-gradient(rgba(28, 236, 200, 0), rgba(0, 0, 0, 0.6)),url("../../assets/images/mountainsgray.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 20px;
-  opacity: 0.9;
 }
 
 .Overlay {
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: #d8d8d8;
+  color: #fff;
   position: absolute;
   top: 50%;
   left: 5%;
@@ -52,7 +51,6 @@
 
 .Title {
   font-size: 2rem;
-
   letter-spacing: 6px;
 }
 
@@ -63,7 +61,7 @@
 }
 
 .SectionLink { 
-  flex-basis: 25%;
+  flex-basis: 50%;
   -ms-flex: auto;
 }
 
@@ -82,7 +80,7 @@
 
 @media(max-width: 1333px) {
   .SectionLink {
-    flex-basis: 25%;
+    flex-basis: 50%;
   }
 }
 @media(max-width: 1073px) {
@@ -91,6 +89,10 @@
   }
 }
 @media(max-width: 815px) {
+  .Home {
+    margin: 0px 10px 0 10px;
+  }
+
   .Overlay {
     Top: 50%;
     left: 50%;
@@ -114,6 +116,10 @@
   .SectionLink {
     flex-basis: 50%;
   }
+
+  h1 {
+    text-align: center;
+  }
 }
 
 @media(max-width: 499px) {
@@ -132,9 +138,5 @@
 
   .SectionLink {
     flex-basis: 100%;
-  }
-
-  h1 {
-    text-align: center;
   }
 }
