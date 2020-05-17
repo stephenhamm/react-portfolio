@@ -78,6 +78,10 @@
   color: #7a7a7a;
 }
 
+.Blog {
+  min-height: 610px;
+}
+
 @media(max-width: 1333px) {
   .SectionLink {
     flex-basis: 50%;

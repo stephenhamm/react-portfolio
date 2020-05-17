@@ -1,5 +1,4 @@
 .Section {
-  text-align: center;
   border: 1px solid #cecece;
   box-shadow: 0 2px 3px #ccc;
   box-sizing: border-box;
@@ -21,9 +20,19 @@
   background-color: #f9f9f9;
   padding: 20px;
   letter-spacing: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
-.Section img {
+.Icon {
+  max-height: 25px;
+  max-width: 25px;
+
+  margin-right: 10px;
+}
+
+.Image {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -34,7 +43,7 @@
   margin: 0 auto;
 }
 
-.Section:hover img {
+.Image:hover {
   opacity: 0.3;
 }
 
@@ -54,10 +63,6 @@
   background-color: #e0e0e0;
   padding: 20px;
   opacity: 0.8;
-}
-
-.Section:hover .Image {
-  opacity: 0.3;
 }
 
 .Section:hover .Middle {

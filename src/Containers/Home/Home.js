@@ -5,6 +5,10 @@ import Fade from 'react-reveal';
 import Posts from '../Blog/Posts/Posts';
 import Section from '../Section/Section';
 import Coding from '../../assets/images/coding.jpg';
+import CodingIcon from '../../assets/images/codingIcon.png';
+import GraphicDesignIcon from '../../assets/images/graphicdesignIcon.png';
+import PhotographyIcon from '../../assets/images/photographyIcon.png';
+import ScreenPrintingIcon from '../../assets/images/screenprintingIcon.png'
 import Photography from '../../assets/images/photography.jpeg';
 import ScreePrinting from '../../assets/images/screenprinting.jpg';
 import GraphicDesign from '../../assets/images/graphicdesign.png';
@@ -30,16 +34,16 @@ const Home = () => (
       <h1>SKILLS</h1>
       <div className={classes.Sections}>
         <Link to={"/"} className={classes.SectionLink}>
-          <Section title="WEB DEVELOPMENT" image={Coding} />
+          <Section title="WEB DEVELOPMENT" image={Coding} icon={CodingIcon} />
         </Link>
         <Link to={"/"} className={classes.SectionLink}>
-          <Section title="GRAPHIC DESIGN" image={GraphicDesign} />
+          <Section title="GRAPHIC DESIGN" image={GraphicDesign}  icon={GraphicDesignIcon}/>
         </Link>
         <Link to={"/"} className={classes.SectionLink}>
-          <Section title="SCREEN PRINTING" image={ScreePrinting} />
+          <Section title="SCREEN PRINTING" image={ScreePrinting} icon={ScreenPrintingIcon} />
         </Link>
         <Link to={"/"} className={classes.SectionLink}>
-          <Section title="PHOTOGRAPHY" image={Photography} />
+          <Section title="PHOTOGRAPHY" image={Photography} icon={PhotographyIcon} />
         </Link>
       </div> 
       <h1>RECENT BLOG POSTS</h1>
