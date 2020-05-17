@@ -13,7 +13,7 @@ class FullPost extends Component {
 
   componentDidMount () {
     if (this.props.match.params.id) {
-      axios.get('article_group/article/article' + this.props.match.params.id + ".json")
+      axios.get('blog/posts/post' + this.props.match.params.id + ".json")
         .then(response => {
           if (response.data != null) {
             this.setState({loadedPost: response.data});  
@@ -38,7 +38,7 @@ class FullPost extends Component {
     if (this.state.loadedPost && !this.state.error) {
       post = (
         <Fade clear>
-          <div className="FullPost">
+          <div className={classes.FullPost}>
             <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
             <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_edited)}</h4>
             <p>{this.state.loadedPost.body}</p>

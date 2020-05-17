@@ -11,9 +11,9 @@
   display: flex;
   align-items: center;
   position: fixed; 
-  -webkit-box-shadow: 0 8px 6px -6px #999;
-  -moz-box-shadow: 0 8px 6px -6px #999;
-  box-shadow: 0 8px 6px -6px #999;
+  -webkit-box-shadow: 0 8px 6px -6px #4f4f4f;
+  -moz-box-shadow: 0 8px 6px -6px #4f4f4f;
+  box-shadow: 0 8px 6px -6px #4f4f4f;
 }
 
 .Toolbar nav {

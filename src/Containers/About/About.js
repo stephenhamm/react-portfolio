@@ -1,7 +1,8 @@
 import React from 'react';
+import classes from './About.module.css';
 
 const About = () => (
-  <div>
+  <div className={classes.About}>
     <p>About</p>
   </div>
 );
