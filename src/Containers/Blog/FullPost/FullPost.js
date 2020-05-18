@@ -41,7 +41,7 @@ class FullPost extends Component {
           <div className={classes.FullPost}>
             <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
             <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_posted)}</h4>
-            <p>{this.state.loadedPost.body}</p>
+            <p className={classes.Body}>{this.state.loadedPost.body}</p>
           </div>
           <div className={classes.Link}>
             <Link to="/blog">MORE POSTS</Link>
