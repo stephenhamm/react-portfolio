@@ -19,13 +19,13 @@ class Posts extends Component {
   }
 
   retrievePosts = () => {
-    const limit = this.props.home ? 4 : 8;
+    const limit = this.props.home ? 4 : 12;
 
     axios.get('/blog/posts.json')
       .then(response => {
         const result = Object.keys(response.data).map((k) => response.data[k]);
-        const totalPosts = result.length      
-        const newestPosts = result.sort((a, b) => b.date_posted - a.date_posted);
+        const totalPosts = result.length       
+        const newestPosts = result.sort((a, b) => new Date(b.date_posted) - new Date(a.date_posted));
         const postList = newestPosts.splice(this.state.postCount, limit);      
         this.addItems(postList, totalPosts);  
       })
@@ -65,15 +65,14 @@ class Posts extends Component {
     if (!this.state.error) {
       posts = this.state.posts.map((post) => {
         return (
-          <Link to={"/post/" + post.id} key={post.id} className={classes.PostLink}>
-            <Fade clear>
-              <Post 
-                id={post.id}
-                title={post.title} 
-                date={post.date_posted}
-                body={post.body} />
-            </Fade>
-          </Link>);
+          <Post 
+            key={post.id}
+            id={post.id}
+            title={post.title} 
+            date_posted={post.date_posted}
+            body={post.body} 
+            likes={post.likes}
+            dislikes={post.dislikes} />);
       });
     }
 

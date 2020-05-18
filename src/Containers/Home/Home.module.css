@@ -1,10 +1,11 @@
 .Home {
   margin: 0px 30px 0 30px;
-  text-align: center;
 }
 
 .ContainerTitle{
   letter-spacing: 5px;
+  margin: 10px;
+  font-size: 3rem;
 }
 
 .Image {
@@ -12,7 +13,7 @@
   height: 370px;
   position: relative;
   text-align: center;
-  background: linear-gradient(rgba(28, 236, 200, 0), rgba(0, 0, 0, 0.6)),url("../../assets/images/mountainsgray.jpg");
+  background: linear-gradient(rgba(28, 236, 200, 0), rgba(0, 0, 0, 0.6)),url("../../assets/images/homeBanner.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -48,7 +49,7 @@
 
 .Name {
   font-size: 6rem;
-  font-weight: 300;
+  font-weight: 600;
   border-bottom: 1px solid white;
   margin-bottom: 10px;
   letter-spacing: 6px;
@@ -85,7 +86,7 @@
 }
 
 .Blog {
-  min-height: 610px;
+  min-height: 600px;
 }
 
 @media(max-width: 1333px) {

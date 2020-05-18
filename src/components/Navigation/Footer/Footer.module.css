@@ -64,14 +64,14 @@
 .Linkedin {
   width: 25px;
   height: 25px;
-  background: url("../../../assets/images/linkedin.png");
+  background: url("../../../assets/images/icons/linkedin.png");
   background-repeat: no-repeat;
   background-size: contain;
   transition: .3s ease;
 }
 
 .Linkedin:hover {
-  background: url("../../../assets/images/linkedingray.png");
+  background: url("../../../assets/images/icons/linkedinInverted.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -79,14 +79,14 @@
 .Github {
   width: 25px;
   height: 25px;
-  background: url("../../../assets/images/github.png");
+  background: url("../../../assets/images/icons/github.png");
   background-repeat: no-repeat;
   background-size: contain;
   transition: .3s ease;
 }
 
 .Github:hover {
-  background: url("../../../assets/images/githubgray.png");
+  background: url("../../../assets/images/icons/githubInverted.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
@@ -111,7 +111,7 @@
   .Linkedin:hover {
     width: 25px;
     height: 25px;
-    background: url("../../../assets/images/linkedin.png");
+    background: url("../../../assets/images/icons/linkedin.png");
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -119,7 +119,7 @@
   .Github:hover {
     width: 25px;
     height: 25px;
-    background: url("../../../assets/images/github.png");
+    background: url("../../../assets/images/icons/github.png");
     background-repeat: no-repeat;
     background-size: contain;
   }

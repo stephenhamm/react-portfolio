@@ -1,3 +1,9 @@
+.PostContainer { 
+  display: flex;
+  flex-basis: 25%;
+  -ms-flex: auto;
+}
+
 .Post {
   text-align: center;
   border: 1px solid #eee;
@@ -5,7 +11,7 @@
   box-sizing: border-box;
   transition: .3s ease;
   color: black;
-  height: 550px;
+  max-height: 650px;
   box-sizing: border-box;
   margin: 10px;
   display: flex;
@@ -53,7 +59,7 @@
 
 .Body {
   text-decoration: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-align: left;
 }
 
@@ -64,10 +70,21 @@
 }
 
 .Link {
-  transition: .3s ease;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.9rem;
 }
 
-.Link:hover {
+.Link a {
+  transition: .3s ease;
+  color: black;
+}
+
+.Link a:visited {
+  color: black;
+}
+
+.Link a:hover {
   color: #7a7a7a;
 }
 
@@ -77,14 +94,92 @@
   justify-content: flex-end;
 }
 
-.Thumbs {
-  max-height: 15px;
-  max-width: 15px;
-  margin-left: 15px;
+.ThumbsUp {
+  width: 20px;
+  height: 20px;
+  background: url("../../assets/images/icons/thumbsUp.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: .3s ease;
+}
+
+.ThumbsDown {
+  width: 20px;
+  height: 20px;
+  background: url("../../assets/images/icons/thumbsDown.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: .3s ease;
+  margin-left: 20px;
+}
+
+.ThumbsUp:hover {
+  cursor: pointer;
+  background: url("../../assets/images/icons/thumbsUpInverted.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.ThumbsDown:hover {
+  cursor: pointer;
+  background: url("../../assets/images/icons/thumbsDownInverted.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media(max-width: 1333px) {
+  .PostContainer {
+    flex-basis: 25%;
+  }
+
+  .ThumbsUp, 
+  .ThumbsDown {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+@media(max-width: 1073px) {
+   .PostContainer {
+    flex-basis: 50%;
+  }
+}
+
+@media(max-width: 815px) {
+  .PostContainer {
+    flex-basis: 50%;
+  }
+}
+
+@media(max-width: 555px) {
+  .PostContainer {
+    flex-basis: 100%;
+  }
 }
 
 @media (hover: none) {
+  .Post:hover,
+  .Post:active {
+    background-color: #fff;
+  }
+
   .Link a:hover {
     color: black;
+  }
+
+  .ThumbsUp:hover {
+    width: 20px;
+    height: 20px;
+    background: url("../../assets/images/icons/thumbsUp.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .ThumbsDown:hover {
+    width: 20px;
+    height: 20px;
+    background: url("../../assets/images/icons/thumbsDown.png");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }

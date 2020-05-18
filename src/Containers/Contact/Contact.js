@@ -22,7 +22,7 @@ const Contact = () => {
       })
       .then(response => {
         e.target.reset();
-        notify.show("Message sent. Thank you!", "custom", 5000, {background: "#34ad82", text: "#FFFFFF"}); 
+        notify.show("Message sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"}); 
       })
       .catch(error => {
         notify.show("Error sending message.", "error");

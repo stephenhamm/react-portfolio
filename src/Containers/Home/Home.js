@@ -5,13 +5,13 @@ import Fade from 'react-reveal';
 import Posts from '../Blog/Posts/Posts';
 import Section from '../Section/Section';
 import Coding from '../../assets/images/coding.jpg';
-import CodingIcon from '../../assets/images/codingIcon.png';
-import GraphicDesignIcon from '../../assets/images/graphicdesignIcon.png';
-import PhotographyIcon from '../../assets/images/photographyIcon.png';
-import ScreenPrintingIcon from '../../assets/images/screenprintingIcon.png'
+import CodingIcon from '../../assets/images/icons/codingIcon.png';
+import GraphicDesignIcon from '../../assets/images/icons/graphicDesignIcon.png';
+import PhotographyIcon from '../../assets/images/icons/photographyIcon.png';
+import ScreenPrintingIcon from '../../assets/images/icons/screenPrintingIcon.png'
 import Photography from '../../assets/images/photography.jpeg';
-import ScreePrinting from '../../assets/images/screenprinting.jpg';
-import GraphicDesign from '../../assets/images/graphicdesign.png';
+import ScreePrinting from '../../assets/images/screenPrinting.jpg';
+import GraphicDesign from '../../assets/images/graphicDesign.png';
 import classes from './Home.module.css';
 
 const Home = () => (

@@ -1,9 +1,10 @@
 .Blog {
   margin: 80px 30px 0 30px;
+  text-align: center;
 }
 
-h1 {
-  margin: 10px;
+.ContainerTitle {
+  letter-spacing: 5px;
 }
 
 .Posts {

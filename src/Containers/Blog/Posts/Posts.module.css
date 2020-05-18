@@ -39,33 +39,6 @@ a {
   font-size: 1.8rem;
 }
 
-.PostLink { 
-  display: flex;
-  flex-basis: 25%;
-  -ms-flex: auto;
-}
-
-@media(max-width: 1333px) {
-  .PostLink {
-    flex-basis: 25%;
-  }
-}
-@media(max-width: 1073px) {
-   .PostLink {
-    flex-basis: 50%;
-  }
-}
-@media(max-width: 815px) {
-  .PostLink {
-    flex-basis: 50%;
-  }
-}
-@media(max-width: 555px) {
-  .PostLink {
-    flex-basis: 100%;
-  }
-}
-
 @media (hover: none) {
   .Link a:hover {
     color: black;

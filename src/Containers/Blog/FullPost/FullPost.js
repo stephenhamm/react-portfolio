@@ -29,8 +29,8 @@ class FullPost extends Component {
   }
 
   parseDate = (str) => {
-		return new Date(parseInt(str)).toLocaleDateString();
-	}
+    return new Date(str).toLocaleDateString();
+  }
 
   render () {
     let post = this.state.error ? <p className={classes.Error}>Error retrieving post</p>: null;
@@ -40,7 +40,7 @@ class FullPost extends Component {
         <Fade clear>
           <div className={classes.FullPost}>
             <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
-            <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_edited)}</h4>
+            <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_posted)}</h4>
             <p>{this.state.loadedPost.body}</p>
           </div>
           <div className={classes.Link}>
