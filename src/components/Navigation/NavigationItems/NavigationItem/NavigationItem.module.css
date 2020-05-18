@@ -5,6 +5,7 @@
   min-width: 80px;
   font-size: 1.7rem;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .NavigationItem a {

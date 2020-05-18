@@ -30,13 +30,25 @@
   object-fit: cover;
 }
 
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .Content {
-  padding: 20px;
-  margin-bottom: 40px;
+  padding: 25px 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .Title {
   color: #3a3a3a;
+  margin-bottom: 5px;
+  margin-top: 0;
+  line-height: 1;
 }
 
 .Body {
@@ -48,6 +60,7 @@
 .Date {
   color: #7a7a7a;
   font-size: 1.7rem;
+  margin: 10px;
 }
 
 .Link {
@@ -56,6 +69,18 @@
 
 .Link:hover {
   color: #7a7a7a;
+}
+
+.Rating {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.Thumbs {
+  max-height: 15px;
+  max-width: 15px;
+  margin-left: 15px;
 }
 
 @media (hover: none) {

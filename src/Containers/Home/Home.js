@@ -31,7 +31,7 @@ const Home = () => (
       </div>
     </div>
     <div className={classes.Home}>
-      <h1>SKILLS</h1>
+      <h1 className={classes.ContainerTitle}>SKILLS</h1>
       <div className={classes.Sections}>
         <Link to={"/"} className={classes.SectionLink}>
           <Section title="WEB DEVELOPMENT" image={Coding} icon={CodingIcon} />
@@ -46,7 +46,7 @@ const Home = () => (
           <Section title="PHOTOGRAPHY" image={Photography} icon={PhotographyIcon} />
         </Link>
       </div> 
-      <h1>RECENT BLOG POSTS</h1>
+      <h1 className={classes.ContainerTitle}>RECENT BLOG POSTS</h1>
       <div className={classes.Blog}>
         <Posts home={true}/>
       </div>

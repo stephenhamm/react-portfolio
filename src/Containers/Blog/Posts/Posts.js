@@ -68,10 +68,10 @@ class Posts extends Component {
           <Link to={"/post/" + post.id} key={post.id} className={classes.PostLink}>
             <Fade clear>
               <Post 
+                id={post.id}
                 title={post.title} 
                 date={post.date_posted}
-                body={post.body} 
-                className={classes.Posti} />
+                body={post.body} />
             </Fade>
           </Link>);
       });

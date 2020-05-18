@@ -13,23 +13,27 @@
   position: relative;
 }
 
-.Title {
-  font-size: 2rem;
-  font-weight: 600;
-  color: #3a3a3a;
+.Title { 
   background-color: #f9f9f9;
-  padding: 20px;
-  letter-spacing: 5px;
+  padding: 20px; 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.TitleText {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #3a3a3a;
+  letter-spacing: 5px;
 }
 
 .Icon {
-  max-height: 25px;
-  max-width: 25px;
-
-  margin-right: 10px;
+  max-height: 22px;
+  max-width: 22px;
+  margin-right: 15px;
 }
 
 .Image {
@@ -63,6 +67,7 @@
   background-color: #e0e0e0;
   padding: 20px;
   opacity: 0.8;
+  letter-spacing: 5px;
 }
 
 .Section:hover .Middle {
@@ -71,8 +76,18 @@
 
 @media(max-width: 815px) {
   .Title {
+    justify-content: center;
+  }
+
+  .TitleText {
     font-size: 1.4rem;
     letter-spacing: 3px;
+  }
+
+  .Icon {
+    max-height: 15px;
+    max-width: 15px;
+    margin-right: 10px;
   }
 }
 
