@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import axios from '../../../axios';
 import Fade from 'react-reveal';
 
+import { thumbsUp, thumbsDown, parseDate } from '../../../Shared/Utils';
 import classes from './FullPost.module.css';
 
 class FullPost extends Component {
@@ -28,20 +29,21 @@ class FullPost extends Component {
       }
   }
 
-  parseDate = (str) => {
-    return new Date(str).toLocaleDateString();
-  }
-
   render () {
     let post = this.state.error ? <p className={classes.Error}>Error retrieving post</p>: null;
 
     if (this.state.loadedPost && !this.state.error) {
       post = (
         <Fade clear>
+          <div className={classes.Image}></div>
           <div className={classes.FullPost}>
             <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
-            <h4 className={classes.Date}>{this.parseDate(this.state.loadedPost.date_posted)}</h4>
+            <h4 className={classes.Date}>{parseDate(this.state.loadedPost.date_posted)}</h4>
             <p className={classes.Body}>{this.state.loadedPost.body}</p>
+            <div className={classes.Rating}>
+						  <div className={classes.ThumbsUp} onClick={(id) => thumbsUp(this.props)}></div>
+						  <div className={classes.ThumbsDown} onClick={(id) => thumbsDown(this.props)}></div>
+					  </div>
           </div>
           <div className={classes.Link}>
             <Link to="/blog">MORE POSTS</Link>

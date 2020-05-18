@@ -1,14 +1,15 @@
 .Blog {
   margin: 80px 30px 0 30px;
-  text-align: center;
 }
 
 .ContainerTitle {
   letter-spacing: 5px;
+  margin: 10px;
 }
 
 .Posts {
   margin: 0 auto;
+  min-height: 1720px;
 }
 
 @media(max-width: 815px) {

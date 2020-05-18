@@ -4,8 +4,8 @@
 
 .Message {
   font-size: 2rem;
-  text-align: center;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .Image {
@@ -31,9 +31,11 @@
 
 .Form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  max-width: 800px;
+  margin: 20px auto auto auto;
 }
 
 .Left {
@@ -48,6 +50,67 @@
   display: flex;
   flex-direction: column;
   width: 49%;
+}
+
+.Social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.Linkedin {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/images/icons/linkedinLightGray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: .3s;
+}
+
+.Linkedin:hover {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/images/icons/linkedinDarkGray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Github {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/images/icons/githubLightGray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 40px;
+  transition: .3s;
+}
+
+.Github:hover {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/images/icons/githubDarkGray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.Brighten {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/images/icons/brightenApparelLightGray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 40px;
+  transition: .3s;
+}
+
+.Brighten:hover {
+  width: 40px;
+  height: 40px;
+  background: url("../../assets/images/icons/brightenApparelDarkGray.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 label {
@@ -74,6 +137,7 @@ input, textarea:focus {
 textarea {
   resize: none;
   height: 100%;
+  min-height: 250px;
 }
 
 .Form span {
@@ -103,6 +167,8 @@ textarea {
 
   .Form {
     flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .Left {
@@ -118,5 +184,25 @@ textarea {
 @media(min-width: 320px) and (max-width: 400px) {
   .Overlay {
     font-size: 8rem;
+  }
+}
+
+@media (hover: none) {
+  .Linkedin:hover {
+    background: url("../../assets/images/icons/linkedinLightGray.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .Github:hover {
+    background: url("../../assets/images/icons/githubLightGray.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  
+  .Brighten:hover {
+    background: url("../../assets/images/icons/brightenApparelLightGray.png");
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }

@@ -168,16 +168,16 @@
   }
 
   .ThumbsUp:hover {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background: url("../../assets/images/icons/thumbsUp.png");
     background-repeat: no-repeat;
     background-size: contain;
   }
 
   .ThumbsDown:hover {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background: url("../../assets/images/icons/thumbsDown.png");
     background-repeat: no-repeat;
     background-size: contain;

@@ -1,38 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Fade from 'react-reveal/';
-import { notify } from 'react-notify-toast';
-import axios from '../../axios';
-import {cloneDeep} from 'lodash'
 
+import { thumbsUp, thumbsDown, parseDate, truncateString } from '../../Shared/Utils';
 import classes from './Post.module.css';
-
-const truncateString = (str, limit) => {
-	return str.length > limit ? str.substring(0, limit) + "..." : str;
-}
-
-const parseDate = (str) => {
-	return new Date(str).toLocaleDateString();
-}
-
-const thumbsUp = (post) => {
-	// const updatedPost = cloneDeep(post);
-	// updatedPost.likes += 1;
-
-	// axios.put('/blog/posts/post' + post.id + ".json", updatedPost)
-	// 	.then(response => {
-	// 		console.log(response);
-	// 		notify.show("Rating sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"});
-	// 	})
-	// 	.catch(error => {
-	// 		notify.show("Error sending Rating.", "error")
-	// 	});
-	notify.show("Rating sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"});
-	}
-
-const thumbsDown = (id, likes) => {
-	notify.show("Rating sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"}); 
-}
 
 const Post = (props) => (
 	<Fade clear>
@@ -44,7 +15,7 @@ const Post = (props) => (
 				<div className={classes.Content}>
 					<div className={classes.Header}>
 						<h1 className={classes.Title}>{truncateString(props.title, 50)}</h1>
-						<h4 className={classes.Date}>{parseDate(props.date)}</h4>
+						<h4 className={classes.Date}>{parseDate(props.date_posted)}</h4>
 					</div>
 					<div className={classes.Info}>
 						<div className={classes.Body}>{truncateString(props.body, 220)}</div>
