@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import { useForm, ErrorMessage } from 'react-hook-form';
 import { notify } from 'react-notify-toast';
-import axios from '../../axios';
 import Fade from 'react-reveal';
 import firebase from '../../firebase';
 
