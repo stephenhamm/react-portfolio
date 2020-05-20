@@ -72,7 +72,8 @@ class Posts extends Component {
             date_posted={post.date_posted}
             body={post.body} 
             likes={post.likes}
-            dislikes={post.dislikes} />);
+            dislikes={post.dislikes}
+            image={post.image} />);
       });
     }
 

@@ -35,7 +35,7 @@ class FullPost extends Component {
     if (this.state.loadedPost && !this.state.error) {
       post = (
         <Fade clear>
-          <div className={classes.Image}></div>
+          <div className={classes.Image}>{this.state.loadedPost.image}</div>
           <div className={classes.FullPost}>
             <h1 className={classes.Title}>{this.state.loadedPost.title}</h1>
             <h4 className={classes.Date}>{parseDate(this.state.loadedPost.date_posted)}</h4>

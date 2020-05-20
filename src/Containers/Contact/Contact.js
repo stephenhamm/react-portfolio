@@ -3,6 +3,7 @@ import { useForm, ErrorMessage } from 'react-hook-form';
 import { notify } from 'react-notify-toast';
 import axios from '../../axios';
 import Fade from 'react-reveal';
+import firebase from '../../firebase';
 
 import Button from '../../components/UI/Button/Button';
 import classes from './Contact.module.css';
@@ -13,20 +14,20 @@ const Contact = () => {
   });
 
   const onSubmit = (data, e) => {
-    axios.post('/contact/messages.json', {
-        Name: data.name.trim(),
-        email: data.email.trim(),
-        phone: data.phone,
-        subject: data.subject.trim(),
-        message: data.message.trim()
-      })
-      .then(response => {
-        e.target.reset();
-        notify.show("Message sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"}); 
-      })
-      .catch(error => {
-        notify.show("Error sending message.", "error");
-      });
+    e.preventDefault();
+    const messagesRef = firebase.database().ref('contact/messages');
+    const message = {
+      Name: data.name.trim(),
+      email: data.email.trim(),
+      phone: data.phone,
+      subject: data.subject.trim(),
+      message: data.message.trim()
+    }
+
+    messagesRef.push(message).then(response => {
+      e.target.reset();
+      notify.show("Message sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"}); 
+    })
   }
 
   return (
