@@ -1,24 +1,28 @@
 import { notify } from 'react-notify-toast';
-import axios from '../axios';
-import {cloneDeep} from 'lodash'
+import firebase from '../firebase';
 
-export const thumbsUp = (post) => {
-	// const updatedPost = cloneDeep(post);
-	// updatedPost.likes += 1;
+export const updateRatings = (post, likes, dislikes) => {
+  firebase.database().ref('blog/posts/post' + post.id).update({
+		likes: likes,
+		dislikes: dislikes
+	});
 
-	// axios.put('/blog/posts/post' + post.id + ".json", updatedPost)
-	// 	.then(response => {
-	// 		console.log(response);
-	// 		notify.show("Rating sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"});
-	// 	})
-	// 	.catch(error => {
-	// 		notify.show("Error sending Rating.", "error")
-  //   });
-    
 	notify.show("Rating sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"});
 }
 
-export const thumbsDown = (post) => {
+export const thumbsUp = (post, likes) => {
+  firebase.database().ref('blog/posts/post' + post.id).update({
+		likes: likes
+	});
+
+	notify.show("Rating sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"});
+}
+
+export const thumbsDown = (post, dislikes) => {
+	firebase.database().ref('blog/posts/post' + post.id).update({
+		dislikes: dislikes
+	});
+
 	notify.show("Rating sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"}); 
 }
 

@@ -114,6 +114,8 @@
 }
 
 .ThumbsUp:hover {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   background: url("../../assets/images/icons/thumbsUpInverted.png");
   background-repeat: no-repeat;
@@ -121,6 +123,8 @@
 }
 
 .ThumbsDown:hover {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
   background: url("../../assets/images/icons/thumbsDownInverted.png");
   background-repeat: no-repeat;
@@ -130,12 +134,6 @@
 @media(max-width: 1333px) {
   .PostContainer {
     flex-basis: 25%;
-  }
-
-  .ThumbsUp, 
-  .ThumbsDown {
-    width: 15px;
-    height: 15px;
   }
 }
 
@@ -168,16 +166,16 @@
   }
 
   .ThumbsUp:hover {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background: url("../../assets/images/icons/thumbsUp.png");
     background-repeat: no-repeat;
     background-size: contain;
   }
 
   .ThumbsDown:hover {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     background: url("../../assets/images/icons/thumbsDown.png");
     background-repeat: no-repeat;
     background-size: contain;
