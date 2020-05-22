@@ -10,7 +10,8 @@ const Post = (props) => {
 	const [dislikes, setDislikes] = useState(props.dislikes);
 
 	useEffect(() => {
-		updateRatings(props, likes, dislikes);
+		if (likes != props.likes || dislikes != props.dislikes)
+			updateRatings(props, likes, dislikes);
 	}, [likes, dislikes]);
 
 	return (
