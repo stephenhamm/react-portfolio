@@ -9,9 +9,18 @@ const Footer = () => (
       <ul className={classes.NavigationItems}>
         <li className={classes.NavigationItem}>
           <NavLink to="/" exact>HOME</NavLink>
+        </li>
+        <li className={classes.NavigationItem}>
           <NavLink to="/blog" exact>BLOG</NavLink>
+        </li>
+        <li className={classes.NavigationItem}>
           <NavLink to="/about" exact>ABOUT</NavLink>
+        </li>
+        <li className={classes.NavigationItem}>
           <NavLink to="/contact" exact>CONTACT</NavLink>
+        </li>
+        <li className={classes.NavigationItem}>
+          <NavLink to="/login" exact>LOGIN</NavLink>
         </li>
       </ul>
       <p className={classes.Copyright}>© {new Date().getFullYear()} Steve Hamm</p>
