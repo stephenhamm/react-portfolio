@@ -11,6 +11,7 @@ import Contact from './Containers/Contact/Contact';
 import FullPost from './Containers/Blog/FullPost/FullPost';
 import Footer from './components/Navigation/Footer/Footer';
 import classes from './App.module.css'
+import Login from './Containers/Login/Login';
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/post/:id" component={FullPost} />
+            <Route path="/login" component={Login} />
             <Route path="/" exact component={Home} />
           </Switch>
         </Layout>

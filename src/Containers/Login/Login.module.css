@@ -1,0 +1,9 @@
+.Login {
+  margin: 80px 30px 0px 30px;
+}
+
+@media(max-width: 815px) {
+  .Login {
+    margin: 80px 10px 0px 10px;
+  }
+}

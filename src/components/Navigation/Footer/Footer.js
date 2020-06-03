@@ -11,16 +11,16 @@ const Footer = () => (
           <NavLink to="/" exact>HOME</NavLink>
         </li>
         <li className={classes.NavigationItem}>
-          <NavLink to="/blog" exact>BLOG</NavLink>
+          <NavLink to="/blog">BLOG</NavLink>
         </li>
         <li className={classes.NavigationItem}>
-          <NavLink to="/about" exact>ABOUT</NavLink>
+          <NavLink to="/about">ABOUT</NavLink>
         </li>
         <li className={classes.NavigationItem}>
-          <NavLink to="/contact" exact>CONTACT</NavLink>
+          <NavLink to="/contact">CONTACT</NavLink>
         </li>
         <li className={classes.NavigationItem}>
-          <NavLink to="/login" exact>LOGIN</NavLink>
+          <NavLink to="/login">LOGIN</NavLink>
         </li>
       </ul>
       <p className={classes.Copyright}>© {new Date().getFullYear()} Steve Hamm</p>
