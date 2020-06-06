@@ -24,7 +24,7 @@
   margin-right: 22px;
 }
 
-@media (max-width: 499px) {
+@media (max-width: 554px) {
   .DesktopOnly {
     display: none;
   }

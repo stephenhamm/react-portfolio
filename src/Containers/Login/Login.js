@@ -1,33 +1,36 @@
-import React, { Fragment } from 'react';
-import { useForm, ErrorMessage } from 'react-hook-form';
+import React, { useCallback, useContext, useRef, Fragment } from 'react';
+import { withRouter, Redirect } from 'react-router';
 import { notify } from 'react-notify-toast';
 import Fade from 'react-reveal';
 import firebase from '../../firebase';
 
+import { AuthContext } from '../../Auth';
 import Button from '../../components/UI/Button/Button';
 import classes from './Login.module.css';
 
-const Login = () => {
-  const { register, errors, handleSubmit } = useForm({
-    validateCriteriaMode: "all"
-  });
+const Login = ({ history }) => {
+  const form = useRef(null);
 
-  const onSubmit = (data, e) => {
-    e.preventDefault();
-    const messagesRef = firebase.database().ref('contact/messages');
-    const message = {
-      Name: data.name.trim(),
-      email: data.email.trim(),
-      phone: data.phone,
-      subject: data.subject.trim(),
-      message: data.message.trim()
-    }
+  const onSubmit = useCallback(
+    async event => {
+      event.preventDefault();
+      const { email, password } = event.target.elements;
 
-    messagesRef.push(message).then(response => {
-      e.target.reset();
-      notify.show("Message sent. Thank you!", "custom", 3000, {background: "#34ad82", text: "#FFFFFF"}); 
-    })
-  }
+      try {
+        await firebase.auth().signInWithEmailAndPassword(email.value, password.value);
+        history.push("/admin");
+      } catch {
+        notify.show("Invalid username or password", "custom", 3000, {background: "#e23838", text: "#FFFFFF"}); 
+        form.current.reset();
+      }
+    },
+    [history]
+  );
+
+  const { adminUser } = useContext(AuthContext);
+
+  if (adminUser)
+    return <Redirect to="/admin" />;
 
   return(
     <Fragment>
@@ -42,33 +45,11 @@ const Login = () => {
           <p className={classes.Message}>
             Please provide your email address and password.
           </p>   
-        <form onSubmit={handleSubmit(onSubmit)} className={classes.Form}>
+        <form onSubmit={onSubmit} ref={form} className={classes.Form}>
           <label htmlFor="email">Email</label>
-          <input name="email" id="email" ref={register({ 
-            required: "Email is required.", 
-            pattern: {
-              value: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: "Not a valid email address."
-            },
-            maxLength: {
-              value: 50,
-              message: "Email exceeds 50 characters."
-            } })} />
-          <ErrorMessage errors={errors} name="email">
-            {({ messages }) => messages && Object.entries(messages).map(([type, message]) => (<span key={type}>{message}</span>))}
-          </ErrorMessage>
-
+          <input name="email" id="email" />
           <label htmlFor="password">Password</label>
-          <input name="password" id="password" type="password" ref={register({ 
-            required: "Password is required.", 
-            maxLength: {
-              value: 50,
-              message: "Password exceeds 50 characters."
-            } })} />
-          <ErrorMessage errors={errors} name="password">
-            {({ messages }) => messages && Object.entries(messages).map(([type, message]) => (<span key={type}>{message}</span>))}
-          </ErrorMessage>
-
+          <input name="password" id="password" type="password" />
           <div className={classes.Submit}>
             <Button type="submit">SUBMIT</Button>
           </div>
@@ -78,4 +59,4 @@ const Login = () => {
   );
 }
 
-export default Login;
+export default withRouter(Login);

@@ -9,7 +9,7 @@
   font-weight: 800;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 555px) {
   .NavigationItems {
     flex-flow: row;
   }
