@@ -1,9 +1,91 @@
 .Login {
-  margin: 80px 30px 0px 30px;
+  margin: 0 30px 0 30px;
+}
+
+.Message {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.Image {
+  width: 100%;
+  height: 370px;
+  position: relative;
+  text-align: center;
+  background: url("../../assets/images/loginBanner.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  margin-bottom: 40px;
+}
+
+.Overlay {
+  font-size: 14rem;
+  color: #d8d8d8;
+  position: absolute;
+  top: 27%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 800px;
+  margin: 20px auto auto auto;
+}
+
+.Form span {
+  margin-bottom: 10px;
+  color: #bf1650;
+  font-size: 1.5rem;
+}
+
+.Form span::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.8rem;
+  border: 1px solid #a8a8a8;
+  padding: 13px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.Submit {
+  text-align: center;
+  margin-top: 10px;
 }
 
 @media(max-width: 815px) {
   .Login {
-    margin: 80px 10px 0px 10px;
+    margin: 0 20px 0 20px;
+  }
+
+  .Overlay {
+    font-size: 10rem;
+  }
+
+  .Form {
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media(min-width: 320px) and (max-width: 400px) {
+  .Overlay {
+    font-size: 8rem;
   }
 }

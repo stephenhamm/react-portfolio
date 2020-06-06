@@ -42,7 +42,7 @@ const Contact = () => {
         <div className={classes.Intro}>
           <p className={classes.Message}>
             I'd love to hear from you! Please fill in and submit this form and I will respond to you as soon as possible. You can also contact
-              me directly via email or through the links below.
+            me directly via email or through the links below.
           </p>
           <div className={classes.Social}>
             <a href="https://www.linkedin.com/in/stephenhamm/" target="_blank" rel="noopener noreferrer" className={classes.Link}>

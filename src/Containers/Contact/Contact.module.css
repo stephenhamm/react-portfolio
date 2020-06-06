@@ -38,20 +38,6 @@
   margin: 20px auto auto auto;
 }
 
-.Left {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 49%; 
-}
-
-.Right {
-  display: flex;
-  flex-direction: column;
-  width: 49%;
-}
-
 .Social {
   display: flex;
   flex-direction: row;
@@ -169,15 +155,6 @@ textarea {
     flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
-  }
-
-  .Left {
-    width: 100%;
-  }
-
-  .Right {
-    width: 100%;
-    height: 350px;
   }
 }
 
