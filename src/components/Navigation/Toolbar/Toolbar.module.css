@@ -1,36 +1,117 @@
-.Toolbar {
+.Header {
   max-width: 1600px;
   width: 100%;
+  margin: auto;
+  box-sizing: border-box;
   top: 0;
   background-color: #161616;
-  padding: 0 20px;
-  box-sizing: border-box;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: fixed;
   z-index: 90;
-  margin: auto;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  position: fixed; 
-  -webkit-box-shadow: 0 8px 6px -6px #4f4f4f;
-  -moz-box-shadow: 0 8px 6px -6px #4f4f4f;
-  box-shadow: 0 8px 6px -6px #4f4f4f;
+  min-height: 65px;
 }
 
-.Toolbar nav {
+.Header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #161616;
   height: 100%;
+  font-weight: 600;
 }
 
-.Logo {
-  margin-right: 22px;
+.Header .Menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .1s ease-out;
 }
 
-@media (max-width: 554px) {
-  .DesktopOnly {
+.Header .MenuIcon {
+  cursor: pointer;
+  float: right;
+  padding: 26px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.Header .MenuIcon .NavIcon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 23px;
+}
+
+.Header .MenuIcon .NavIcon:before,
+.Header .MenuIcon .NavIcon:after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.Header .MenuIcon .NavIcon:before {
+  top: 8px;
+}
+
+.Header .MenuIcon .NavIcon:after {
+  top: -8px;
+}
+
+.Header .MenuButton {
+  display: none;
+}
+
+.Header .MenuButton:checked ~ .Menu {
+  max-height: 500px;
+}
+
+.Header .MenuButton:checked ~ .MenuIcon .NavIcon {
+  background: transparent;
+}
+
+.Header .MenuButton:checked ~ .MenuIcon .NavIcon:before {
+  transform: rotate(-45deg);
+}
+
+.Header .MenuButton:checked ~ .MenuIcon .NavIcon:after {
+  transform: rotate(45deg);
+}
+
+.Header .MenuButton:checked ~ .MenuIcon:not(.steps) .NavIcon:before,
+.Header .MenuButton:checked ~ .MenuIcon:not(.steps) .NavIcon:after {
+  top: 0;
+}
+
+@media (min-width: 708px) {
+  .Header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; 
+    height: 65px;
+  }
+ 
+  .Header li {
+    float: left;
+    padding: 0;
+  }
+
+  .Header li a {
+    padding: 20px 20px;
+  }
+
+  .Header .Menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+
+  .Header .MenuIcon {
     display: none;
   }
-
-  .Toolbar {
-    justify-content: space-between;
-  }
 }
-

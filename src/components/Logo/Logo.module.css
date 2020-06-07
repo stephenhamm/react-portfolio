@@ -1,15 +1,16 @@
 .Logo {
-  height: 100%;
-  box-sizing: border-box;
-  
+  margin-right: 22px;
+  margin-left: 20px;
+  line-height: 65px;
 }
 
 .Logo img {
   height: 35px;
+  vertical-align: middle;
 }
 
-@media (max-width: 499px) {
-  .Logo img {
-    height: 30px;
+@media (max-width: 708px) {
+  .Logo {
+    display: inline-block;   
   }
 }
