@@ -29,8 +29,8 @@
     display: none;
   }
 
-  .Logo {
-    margin-left: 18px;
+  .Toolbar {
+    justify-content: space-between;
   }
 }
 

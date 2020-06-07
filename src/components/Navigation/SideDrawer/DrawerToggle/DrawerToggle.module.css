@@ -10,10 +10,11 @@
   cursor: pointer;
 }
 
-.DrawerToggle div {
+.DrawerToggle span {
   width: 80%;
-  height: 3px;
+  height: 4px;
   background-color: white;
+  border-radius: 20px;
 }
 
 @media (min-width: 555px) {
