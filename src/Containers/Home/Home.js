@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Fade from 'react-reveal';
 
 import Posts from '../Blog/Posts/Posts';
-import Section from '../Section/Section';
+import Section from '../../components/Section/Section';
 import Coding from '../../assets/images/coding.jpg';
 import CodingIcon from '../../assets/images/icons/codingIcon.png';
 import GraphicDesignIcon from '../../assets/images/icons/graphicDesignIcon.png';
