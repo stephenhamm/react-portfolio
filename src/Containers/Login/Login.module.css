@@ -13,7 +13,7 @@
   height: 370px;
   position: relative;
   text-align: center;
-  background: url("../../assets/images/loginBanner.jpeg");
+  background: linear-gradient(rgba(28, 236, 200, 0), rgba(0, 0, 0, 0.2)),url("../../assets/images/loginBanner.jpeg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
