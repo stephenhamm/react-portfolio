@@ -13,12 +13,12 @@
 }
 
 .Left {
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .Right {
   display: flex;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .NavigationItems {
@@ -93,12 +93,12 @@
 
 @media  (max-width: 400px) {
   .Left {
-    margin-left: 15px;
+    margin-left: 10px;
   }
   
   .Right {
     display: block;
-    margin-right: 15px;
+    margin-right: 10px;
   }
 
   .Linkedin, .Github {

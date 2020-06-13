@@ -14,7 +14,7 @@
   height: 370px;
   position: relative;
   text-align: center;
-  background: linear-gradient(rgba(28, 236, 200, 0), rgba(0, 0, 0, 0.6)),url("../../../assets/images/empty.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.6)),url("../../../assets/images/empty.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
