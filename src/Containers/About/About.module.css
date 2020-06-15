@@ -1,9 +1,88 @@
 .About {
-  margin: 80px 30px 0px 30px;
+  margin: 100px 40px 0px 40px;
+}
+
+.ContainerTitle {
+  letter-spacing: 5px;
+  font-size: 3rem;
+}
+
+.ImageInner {
+  width: 100%;
+  height: auto;
+}
+
+.Section, .SectionMiddle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.SectionMiddle {
+  flex-direction: row-reverse;
+}
+
+.Text {
+  font-size: 2.2rem;
+  max-width: 60%;
+}
+
+.Image, .BrightenImage {
+  max-width: 35%;
+}
+
+hr {
+  margin-bottom: 40px;
+}
+
+.Link {
+  margin-top: 30px;
+}
+.Link a {
+  color: #000;
+}
+
+.Link a:visited {
+  color: #000;
+}
+
+.Link a:hover {
+  color: #7a7a7a;
 }
 
 @media(max-width: 815px) {
   .About {
-    margin: 80px 10px 0px 10px;
+    margin: 80px 30px 0px 30px;
+  }
+
+  .Section, .SectionMiddle {
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  .Image, .BrightenImage, .Text {
+    max-width: 100%;
+  }
+
+  .BrightenImage {
+    margin-top: 30px;
+  }
+
+  .Link {
+    text-align: center;
+  }
+}
+
+@media(max-width: 499px) {
+  .About {
+    margin: 80px 20px 0px 20px;
+  }
+}
+
+@media (hover: none) {
+  .Link a:hover {
+    color: #000;
   }
 }

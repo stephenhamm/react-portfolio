@@ -32,20 +32,22 @@ const Home = () => (
     </div>
     <div className={classes.Home}>
       <h1 className={classes.ContainerTitle}>SKILLS</h1>
-      <div className={classes.Sections}>
-        <Link to={"/"} className={classes.SectionLink}>
-          <Section title="WEB DEVELOPMENT" image={Coding} icon={CodingIcon} />
-        </Link>
-        <Link to={"/"} className={classes.SectionLink}>
-          <Section title="GRAPHIC DESIGN" image={GraphicDesign}  icon={GraphicDesignIcon}/>
-        </Link>
-        <Link to={"/"} className={classes.SectionLink}>
-          <Section title="SCREEN PRINTING" image={ScreePrinting} icon={ScreenPrintingIcon} />
-        </Link>
-        <Link to={"/"} className={classes.SectionLink}>
-          <Section title="PHOTOGRAPHY" image={Photography} icon={PhotographyIcon} />
-        </Link>
-      </div> 
+      <Fade>
+        <div className={classes.Sections}>
+          <Link to={"/"} className={classes.SectionLink}>
+            <Section title="WEB DEVELOPMENT" image={Coding} icon={CodingIcon} />
+          </Link>
+          <Link to={"/"} className={classes.SectionLink}>
+            <Section title="GRAPHIC DESIGN" image={GraphicDesign}  icon={GraphicDesignIcon}/>
+          </Link>
+          <Link to={"/"} className={classes.SectionLink}>
+            <Section title="SCREEN PRINTING" image={ScreePrinting} icon={ScreenPrintingIcon} />
+          </Link>
+          <Link to={"/"} className={classes.SectionLink}>
+            <Section title="PHOTOGRAPHY" image={Photography} icon={PhotographyIcon} />
+          </Link>
+        </div> 
+      </Fade>
       <h1 className={classes.ContainerTitle}>RECENT BLOG POSTS</h1>
       <div className={classes.Blog}>
         <Posts home={true}/>
